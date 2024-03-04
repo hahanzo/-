@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8A3A197-0B78-441E-88D7-1991FEEB31F5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ОБДЗ</RootNamespace>
+    <AssemblyName>ОБДЗ</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActinometerAddRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActinometerAddRecord.Designer.cs">
+      <DependentUpon>ActinometerAddRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActinometerDeleteRecodrd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActinometerDeleteRecodrd.Designer.cs">
+      <DependentUpon>ActinometerDeleteRecodrd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculator.Designer.cs">
+      <DependentUpon>Calculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserName.Designer.cs">
+      <DependentUpon>frmUserName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMeteorologist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMeteorologist.Designer.cs">
+      <DependentUpon>frmMeteorologist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMeasurement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMeasurement.Designer.cs">
+      <DependentUpon>frmMeasurement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActinometer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActinometer.Designer.cs">
+      <DependentUpon>frmActinometer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeasurementAddRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeasurementAddRecord.Designer.cs">
+      <DependentUpon>MeasurementAddRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeasurementDeleteRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeasurementDeleteRecord.Designer.cs">
+      <DependentUpon>MeasurementDeleteRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeteorologistAddRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeteorologistAddRecord.Designer.cs">
+      <DependentUpon>MeteorologistAddRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeteorologistDeleteRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeteorologistDeleteRecord.Designer.cs">
+      <DependentUpon>MeteorologistDeleteRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myBD.Designer.cs">
+      <DependentUpon>myBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActinometerAddRecord.resx">
+      <DependentUpon>ActinometerAddRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActinometerDeleteRecodrd.resx">
+      <DependentUpon>ActinometerDeleteRecodrd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculator.resx">
+      <DependentUpon>Calculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserName.resx">
+      <DependentUpon>frmUserName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMeteorologist.resx">
+      <DependentUpon>frmMeteorologist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMeasurement.resx">
+      <DependentUpon>frmMeasurement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActinometer.resx">
+      <DependentUpon>frmActinometer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeasurementAddRecord.resx">
+      <DependentUpon>MeasurementAddRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeasurementDeleteRecord.resx">
+      <DependentUpon>MeasurementDeleteRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeteorologistAddRecord.resx">
+      <DependentUpon>MeteorologistAddRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeteorologistDeleteRecord.resx">
+      <DependentUpon>MeteorologistDeleteRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myBD.resx">
+      <DependentUpon>myBD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actinometer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Measurement.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Meteorologist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1000_F_425370104_UAIIbniCZKdWAtiUmajaDRAaPepfTieo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crystal_button_cancel.svg.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
