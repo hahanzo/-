@@ -1,4 +1,5 @@
-﻿using MySqlX.XDevAPI.Relational;
+﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -152,6 +153,50 @@ namespace ОБДЗ
 
             ActinometerDeleteRecodrd ActDelete = new ActinometerDeleteRecodrd();
             ActDelete.ShowDialog();
+
+            h.bs1.DataSource = h.myfunDt("SELECT * FROM Actinometer");
+            dataGridView1.DataSource = h.bs1;
+        }
+
+        private void dataGridView1_CellParsing(object sender, DataGridViewCellParsingEventArgs e)
+        {
+            h.keyName = dataGridView1.Columns[0].Name;
+            h.curVal0 = dataGridView1[0,dataGridView1.CurrentRow.Index].Value.ToString();
+
+            int curColInx = dataGridView1.CurrentCellAddress.X;
+            string curColName = dataGridView1.Columns[curColInx].Name;
+            string newCurCellVal = e.Value.ToString();
+
+            if (curColName == "idActinometer" || curColName == "idMeasurement" || curColName == "Model" || curColName == "Specifications")
+            {
+                newCurCellVal = "'" + newCurCellVal + "'";
+            }
+
+            if (curColName == "model year")
+            {
+                newCurCellVal = Convert.ToDateTime(newCurCellVal).ToString("yyyy-MM-dd");
+                newCurCellVal = "'" + newCurCellVal + "'";
+            }
+
+            string sqlStr = "UPDATE Actinometer SET " + "`" + curColName + "`" + " = " + newCurCellVal + " WHERE " + h.keyName + "=" + h.curVal0;
+
+            using (MySqlConnection con = new MySqlConnection(h.ConStr))
+            {
+                MySqlCommand cmd = new MySqlCommand(sqlStr, con);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            h.curVal0 = dataGridView1[0, dataGridView1.CurrentRow.Index].Value.ToString();
+            h.keyName = dataGridView1.Columns[0].Name;
+
+            EditActinometer editActinometer = new EditActinometer();
+            editActinometer.ShowDialog();
 
             h.bs1.DataSource = h.myfunDt("SELECT * FROM Actinometer");
             dataGridView1.DataSource = h.bs1;

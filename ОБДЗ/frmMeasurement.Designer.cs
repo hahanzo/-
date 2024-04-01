@@ -45,6 +45,7 @@
             this.btnFilter = new System.Windows.Forms.ToolStripButton();
             this.AddNew = new System.Windows.Forms.ToolStripButton();
             this.Delete = new System.Windows.Forms.ToolStripButton();
+            this.Edit = new System.Windows.Forms.ToolStripButton();
             this.txtFind = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -84,6 +85,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1052, 411);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellParsing += new System.Windows.Forms.DataGridViewCellParsingEventHandler(this.dataGridView1_CellParsing);
             // 
             // bindingNavigator1
             // 
@@ -103,7 +105,8 @@
             this.btnFind,
             this.btnFilter,
             this.AddNew,
-            this.Delete});
+            this.Delete,
+            this.Edit});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -224,6 +227,16 @@
             this.Delete.Size = new System.Drawing.Size(23, 22);
             this.Delete.Text = "DeleteRecord";
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            // 
+            // Edit
+            // 
+            this.Edit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Edit.Image = global::ОБДЗ.Properties.Resources.refresh_545661;
+            this.Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Edit.Name = "Edit";
+            this.Edit.Size = new System.Drawing.Size(23, 22);
+            this.Edit.Text = "Edit";
+            this.Edit.Click += new System.EventHandler(this.Edit_Click);
             // 
             // txtFind
             // 
@@ -549,5 +562,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripButton AddNew;
         private System.Windows.Forms.ToolStripButton Delete;
+        private System.Windows.Forms.ToolStripButton Edit;
     }
 }

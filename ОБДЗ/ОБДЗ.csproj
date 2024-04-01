@@ -74,6 +74,24 @@
     <Compile Include="Calculator.Designer.cs">
       <DependentUpon>Calculator.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditMeteorologist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditMeteorologist.Designer.cs">
+      <DependentUpon>EditMeteorologist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditMeasurement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditMeasurement.Designer.cs">
+      <DependentUpon>EditMeasurement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditActinometer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditActinometer.Designer.cs">
+      <DependentUpon>EditActinometer.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUserName.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +165,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calculator.resx">
       <DependentUpon>Calculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditMeteorologist.resx">
+      <DependentUpon>EditMeteorologist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditMeasurement.resx">
+      <DependentUpon>EditMeasurement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditActinometer.resx">
+      <DependentUpon>EditActinometer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserName.resx">
       <DependentUpon>frmUserName.cs</DependentUpon>
@@ -224,6 +251,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Crystal_button_cancel.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\again.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_545661.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

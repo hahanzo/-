@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -145,6 +146,44 @@ namespace ОБДЗ
 
             MeteorologistDeleteRecord ActDelete = new MeteorologistDeleteRecord();
             ActDelete.ShowDialog();
+
+            h.bs1.DataSource = h.myfunDt("SELECT * FROM Meteorologist");
+            dataGridView1.DataSource = h.bs1;
+        }
+
+        private void dataGridView1_CellParsing(object sender, DataGridViewCellParsingEventArgs e)
+        {
+            h.keyName = dataGridView1.Columns[0].Name;
+            h.curVal0 = dataGridView1[0, dataGridView1.CurrentRow.Index].Value.ToString();
+
+            int curColInx = dataGridView1.CurrentCellAddress.X;
+            string curColName = dataGridView1.Columns[curColInx].Name;
+            string newCurCellVal = e.Value.ToString();
+
+            if (curColName == "idMeteorologist" || curColName == "Initials" || curColName == "Address" || curColName == "Place of work" || curColName == "Contacts")
+            {
+                newCurCellVal = "'" + newCurCellVal + "'";
+            }
+
+            string sqlStr = "UPDATE Meteorologist SET " + "`" + curColName + "`" + " = " + newCurCellVal + " WHERE " + h.keyName + "=" + h.curVal0;
+
+            using (MySqlConnection con = new MySqlConnection(h.ConStr))
+            {
+                MySqlCommand cmd = new MySqlCommand(sqlStr, con);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            h.curVal0 = dataGridView1[0, dataGridView1.CurrentRow.Index].Value.ToString();
+            h.keyName = dataGridView1.Columns[0].Name;
+
+            EditMeteorologist editMeteorologist = new EditMeteorologist();
+            editMeteorologist.ShowDialog();
 
             h.bs1.DataSource = h.myfunDt("SELECT * FROM Meteorologist");
             dataGridView1.DataSource = h.bs1;

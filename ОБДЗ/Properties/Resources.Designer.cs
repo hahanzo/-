@@ -83,6 +83,16 @@ namespace ОБДЗ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap again {
+            get {
+                object obj = ResourceManager.GetObject("again", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Crystal_button_cancel_svg {
             get {
                 object obj = ResourceManager.GetObject("Crystal_button_cancel.svg", resourceCulture);
@@ -126,6 +136,16 @@ namespace ОБДЗ.Properties {
         internal static System.Drawing.Bitmap plus {
             get {
                 object obj = ResourceManager.GetObject("plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_545661 {
+            get {
+                object obj = ResourceManager.GetObject("refresh_545661", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
