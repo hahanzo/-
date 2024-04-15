@@ -40,6 +40,12 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.сhoosePictureButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox5
@@ -67,7 +73,7 @@
             // 
             // TabInsCancel
             // 
-            this.TabInsCancel.Location = new System.Drawing.Point(283, 235);
+            this.TabInsCancel.Location = new System.Drawing.Point(277, 502);
             this.TabInsCancel.Name = "TabInsCancel";
             this.TabInsCancel.Size = new System.Drawing.Size(75, 23);
             this.TabInsCancel.TabIndex = 42;
@@ -77,7 +83,7 @@
             // 
             // TabInsAdd
             // 
-            this.TabInsAdd.Location = new System.Drawing.Point(73, 235);
+            this.TabInsAdd.Location = new System.Drawing.Point(67, 502);
             this.TabInsAdd.Name = "TabInsAdd";
             this.TabInsAdd.Size = new System.Drawing.Size(75, 23);
             this.TabInsAdd.TabIndex = 41;
@@ -142,11 +148,51 @@
             this.textBox1.Size = new System.Drawing.Size(223, 20);
             this.textBox1.TabIndex = 33;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(271, 270);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(51, 325);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Фото";
+            // 
+            // сhoosePictureButton
+            // 
+            this.сhoosePictureButton.Location = new System.Drawing.Point(30, 341);
+            this.сhoosePictureButton.Name = "сhoosePictureButton";
+            this.сhoosePictureButton.Size = new System.Drawing.Size(75, 23);
+            this.сhoosePictureButton.TabIndex = 48;
+            this.сhoosePictureButton.Text = "Вибрати";
+            this.сhoosePictureButton.UseVisualStyleBackColor = true;
+            this.сhoosePictureButton.Click += new System.EventHandler(this.сhoosePictureButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(136, 220);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(277, 276);
+            this.panel1.TabIndex = 49;
+            // 
             // MeteorologistAddRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 283);
+            this.ClientSize = new System.Drawing.Size(422, 537);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.сhoosePictureButton);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox4);
@@ -162,6 +208,10 @@
             this.Name = "MeteorologistAddRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Додавання запису у таблицю Meteorologist";
+            this.Load += new System.EventHandler(this.MeteorologistAddRecord_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +230,9 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button сhoosePictureButton;
+        private System.Windows.Forms.Panel panel1;
     }
 }

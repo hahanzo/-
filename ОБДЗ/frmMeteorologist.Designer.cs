@@ -45,6 +45,7 @@
             this.btnFilter = new System.Windows.Forms.ToolStripButton();
             this.AddRecord = new System.Windows.Forms.ToolStripButton();
             this.DeleteRecord = new System.Windows.Forms.ToolStripButton();
+            this.Edit = new System.Windows.Forms.ToolStripButton();
             this.txtFind = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -58,11 +59,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtInitials = new System.Windows.Forms.TextBox();
-            this.Edit = new System.Windows.Forms.ToolStripButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -71,6 +73,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(788, 411);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             this.dataGridView1.CellParsing += new System.Windows.Forms.DataGridViewCellParsingEventHandler(this.dataGridView1_CellParsing);
             // 
             // bindingNavigator1
@@ -100,7 +103,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(808, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(1290, 25);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -213,6 +216,16 @@
             this.DeleteRecord.Size = new System.Drawing.Size(23, 22);
             this.DeleteRecord.Text = "DeleteRecord";
             this.DeleteRecord.Click += new System.EventHandler(this.DeleteRecord_Click);
+            // 
+            // Edit
+            // 
+            this.Edit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Edit.Image = global::ОБДЗ.Properties.Resources.refresh_545661;
+            this.Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Edit.Name = "Edit";
+            this.Edit.Size = new System.Drawing.Size(23, 22);
+            this.Edit.Text = "Edit";
+            this.Edit.Click += new System.EventHandler(this.Edit_Click);
             // 
             // txtFind
             // 
@@ -339,21 +352,22 @@
             this.txtInitials.Size = new System.Drawing.Size(93, 20);
             this.txtInitials.TabIndex = 0;
             // 
-            // Edit
+            // pictureBox1
             // 
-            this.Edit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Edit.Image = global::ОБДЗ.Properties.Resources.refresh_545661;
-            this.Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Edit.Name = "Edit";
-            this.Edit.Size = new System.Drawing.Size(23, 22);
-            this.Edit.Text = "Edit";
-            this.Edit.Click += new System.EventHandler(this.Edit_Click);
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(806, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(472, 411);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // frmMeteorologist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 634);
+            this.ClientSize = new System.Drawing.Size(1290, 634);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFind);
@@ -369,6 +383,7 @@
             this.bindingNavigator1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,5 +420,6 @@
         private System.Windows.Forms.ToolStripButton AddRecord;
         private System.Windows.Forms.ToolStripButton DeleteRecord;
         private System.Windows.Forms.ToolStripButton Edit;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

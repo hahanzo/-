@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -38,7 +39,7 @@ namespace ОБДЗ
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            if(btnFind.Checked)
+            if (btnFind.Checked)
             {
                 label1.Visible = true;
                 txtFind.Visible = true;
@@ -55,7 +56,7 @@ namespace ОБДЗ
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
                 dataGridView1.Rows[i].Selected = false;
-                for  (int j = 0; j < dataGridView1.ColumnCount; j++)
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
                     if (dataGridView1.Rows[i].Cells[j].Value != null)
                         if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(txtFind.Text))
                         {
@@ -187,6 +188,23 @@ namespace ОБДЗ
 
             h.bs1.DataSource = h.myfunDt("SELECT * FROM Meteorologist");
             dataGridView1.DataSource = h.bs1;
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            int rIndx = dataGridView1.CurrentCell.RowIndex;
+
+            if (dataGridView1.Rows[rIndx].Cells[5].Value.ToString().Length > 0)
+            {
+                byte[] a = (byte[])dataGridView1.Rows[rIndx].Cells[5].Value;
+                MemoryStream memImage = new MemoryStream(a);
+                pictureBox1.Image = Image.FromStream(memImage);
+                memImage.Close();
+            }
+            else
+            {
+                pictureBox1.Image = Image.FromFile(@"C:\Users\olegd\source\repos\-\ОБДЗ\Resources\no-image-available-icon-vector.jpg");
+            }
         }
     }
 }
