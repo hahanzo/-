@@ -98,6 +98,8 @@ namespace ОБДЗ
         public static string curVal0 { get; set; }
         public static string keyName { get; set; }
 
+        public static string pathToPhoto { get; set; }
+
         public static DataTable myfunDt(string commandString)
         {
             DataTable dt = new DataTable();
